@@ -127,6 +127,9 @@ header img{
 .icons.small.gold{
   width: 20px;
 }
+.icons.small{
+  width: 30px;
+}
 .icons.blue{
   color: #bcccdc;
   background-color: #f1f5f8;
