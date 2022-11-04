@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { NavLink as Link } from "react-router-dom";
 import { AiOutlineBlock, AiOutlineLink, AiOutlineStar, AiOutlineTwitter, AiOutlineGithub } from 'react-icons/ai'
-import Navbar from './Navbar'
 import Loading from './Loading';
 import Pagination from './Pagination';
 import Footer from './Footer';
