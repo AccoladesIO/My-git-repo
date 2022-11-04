@@ -20,9 +20,9 @@ const Users = ({data}) => {
         </header>
         <article className='user-info'>
           <h3 className='text-light'>{data.bio}</h3>
-          <p><AiOutlineBlock className='icons blue'/>{data.location}</p>
-          <p><AiOutlineLink className='icons green'/><a href={data.html_url}>{data.html_url}</a></p>
-          <p><AiOutlineMail className='icons pink'/>{data.email}</p>
+          <p><AiOutlineBlock className='icons blue small'/>{data.location}</p>
+          <p><AiOutlineLink className='icons green small'/><a href={data.html_url}>{data.html_url}</a></p>
+          <p><AiOutlineMail className='icons pink small'/>{data.email}</p>
         </article>
     </article>
   )
