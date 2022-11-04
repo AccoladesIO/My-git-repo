@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineLogin, AiOutlineFile,  AiOutlineGithub, AiOutlineApi, AiOutlineStar } from 'react-icons/ai'
+import { AiOutlineGithub, AiOutlineApi, AiOutlineStar } from 'react-icons/ai'
 import '../App.css'
 
 const Lists = ({data}) => {
