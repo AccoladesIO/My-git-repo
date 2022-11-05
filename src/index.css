@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: primaryFont;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -19,6 +19,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+@font-face {
+  font-family: primaryFont;
+  src: url(../src/assets/fonts/Rubik-Regular.ttf);
 }
 a{
   color: #52d1da;
