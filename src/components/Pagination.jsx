@@ -20,7 +20,7 @@ const Pagination = ({ totalPost, postPerPage, setCurrentPage, currentPage }) => 
                 const style = page === currentPage ? 'fill active' : 'fill'
                 return (
                     <>
-                        <button key={i} className={style} onClick={switchPage} type='button'>{page}</button>
+                        <button key={i+1} className={style} onClick={switchPage} type='button'>{page}</button>
                     </>
                 )
             })}
