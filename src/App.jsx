@@ -1,10 +1,15 @@
 import { useState } from 'react'
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import './App.css'
 import Home from './Home'
 import Repo from './components/Repo';
+import Error from './components/Error';
 
-
+function ProfilePage() {
+  // Get the userId param from the URL.
+  let { userId } = useParams();
+  // ...
+}
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,8 +25,8 @@ function App() {
         element={
         <Repo />
         }>
-
         </Route>
+        <Route path='*' element={<Error />}></Route>
       </Routes>
     </div>
   )
