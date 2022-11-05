@@ -38,10 +38,10 @@ const RepoList = () => {
     <article className='info repo'>
         <h3 className='title'>Repositories</h3>
 
-        {currentRepo.map((list, i) => {
-          console.log(list);
+        {currentRepo.map((list) => {
+          console.log(list.id);
           return(
-        <div className='repo-list' key={i}>
+        <div className='repo-list' key={list.id}>
           <p><strong>Name:</strong> {list.name}</p>
           <p>{list.language}</p>
           <p>{list.stargazers_count} <AiOutlineStar className='icons small gold'/></p>
