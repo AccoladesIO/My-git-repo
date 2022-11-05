@@ -97,10 +97,10 @@ if (loading){
 
 
                     {currentRepo.map((list, i) => {
-                        console.log(list);
+                        console.log(list.id);
                         const format = list.private === false ? 'Public' : 'Private'
                         return (
-                            <div className='repo-list' >
+                            <div className='repo-list' key={list.id}>
                                 <span>
                                     <h2>{list.name}</h2>
                                     <p className='flex'>{list.language}</p>
