@@ -311,6 +311,22 @@ a, p{
 
 .error-page{
   display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.user.user-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin: 20px auto;
+  height: 600px;
+  background: #fff;
 }
