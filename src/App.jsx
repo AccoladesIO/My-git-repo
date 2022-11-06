@@ -1,15 +1,11 @@
 import { useState } from 'react'
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './App.css'
 import Home from './Home'
 import Repo from './components/Repo';
 import Error from './components/Error';
+import SingleRepo from './components/SingleRepo';
 
-function ProfilePage() {
-  // Get the userId param from the URL.
-  let { userId } = useParams();
-  // ...
-}
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,8 +20,8 @@ function App() {
         <Route path='/repo' 
         element={
         <Repo />
-        }>
-        </Route>
+        }/>
+        <Route path='/repo/:id' element={<SingleRepo />}/>
         <Route path='*' element={<Error />}></Route>
       </Routes>
     </div>
