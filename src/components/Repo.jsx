@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { NavLink as Link } from "react-router-dom";
+import { NavLink as Link, Outlet } from "react-router-dom";
 import { AiOutlineBlock, AiOutlineLink, AiOutlineStar, AiOutlineTwitter, AiOutlineGithub } from 'react-icons/ai'
 import Loading from './Loading';
 import Pagination from './Pagination';
@@ -94,15 +94,18 @@ if (loading){
                 </aside>
                 <aside>
                     <h1>Repositories</h1>
+                    <Outlet />
 
-
-                    {currentRepo.map((list, i) => {
-                        console.log(list.id);
+                    {currentRepo.map((list) => {
+                        console.log(list);
                         const format = list.private === false ? 'Public' : 'Private'
                         return (
                             <div className='repo-list' key={list.id}>
+                                
                                 <span>
+                                <Link to={`/repo/${list.id}`} state={{list: list}}>
                                     <h2>{list.name}</h2>
+                                </Link>
                                     <p className='flex'>{list.language}</p>
                                 </span>
                                 <p className='format'>{format}</p>
@@ -121,6 +124,7 @@ if (loading){
                     setCurrentPage={setCurrentPage}
                     currentPage={currentPage}
                     />
+            {/* <Outlet /> */}
                 </aside>
             </main>
             <Footer />
