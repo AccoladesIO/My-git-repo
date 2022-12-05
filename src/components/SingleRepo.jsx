@@ -7,7 +7,7 @@ const SingleRepo = () => {
 
     const navigate = useNavigate()
     const handleClick = () =>{
-      navigate('/')
+      navigate('/repo')
    }
 
 
@@ -42,7 +42,7 @@ const SingleRepo = () => {
       <h3>Visibility: {list.visibility}</h3>
       <p>Language: {list.language}</p>
       <p>Clone URL: <a href={list.clone_url}>{Link.clone_url}</a></p>
-      <button type='button' onClick={handleClick} className='fill'>Return Home</button>
+      <button type='button' onClick={handleClick} className='fill'>Return Back</button>
     </article>
     
     </section>
