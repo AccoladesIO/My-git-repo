@@ -21,7 +21,7 @@ function App() {
         element={
         <Repo />
         }/>
-        <Route path='/repo/:id' element={<SingleRepo />}/>
+        <Route path='/repo/:name' element={<SingleRepo />}/>
         <Route path='*' element={<Error />}></Route>
       </Routes>
     </div>
