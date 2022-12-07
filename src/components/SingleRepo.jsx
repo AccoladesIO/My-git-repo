@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AiOutlineGithub, AiOutlineApi, AiOutlineStar } from 'react-icons/ai'
 import { useNavigate } from 'react-router'
+import Footer from './Footer'
 
 const SingleRepo = () => {
 
@@ -45,6 +46,7 @@ const SingleRepo = () => {
       <button type='button' onClick={handleClick} className='fill'>Return Back</button>
     </article>
     
+    <Footer />
     </section>
   )
 }
