@@ -103,7 +103,7 @@ if (loading){
                             <div className='repo-list' key={list.id}>
                                 
                                 <span>
-                                <Link to={`/repo/${list.id}`} state={{list: list}}>
+                                <Link to={`/repo/${list.name}`} state={{list: list}}>
                                     <h2>{list.name}</h2>
                                 </Link>
                                     <p className='flex'>{list.language}</p>
