@@ -3,32 +3,14 @@ import { useEffect, useState } from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
 import '../App.css'
 import Pagination from './Pagination'
+import { useFetchRepo } from '../hooks/useFetchRepo'
 
 const RepoList = () => {
+  const repo = useFetchRepo()
 
-  const [repo, setRepo] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1)
   const [postPerPage, setPostPerPage] = useState(5)
-
-
-  const fetchData = async () => {
-    
-    const url_repo = 'https://api.github.com/users/accoladesio/repos'
-
-    const response = await fetch(url_repo);
-    const repo = await response.json();
-    console.log(repo[1].owner)
-    // console.log(repo);
-
-    setRepo(repo)
-    // disable loading state once data is fetched
-    // console.log(repo)
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-  
+ 
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage
