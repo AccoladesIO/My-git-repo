@@ -13,5 +13,5 @@ export const usePaginate = () => {
   const currentRepo = repo.slice(firstPostIndex, lastPostIndex)
 
 
-  return {setCurrentPage, currentRepo, postPerPage, currentPage}
+  return {setCurrentPage, currentRepo, postPerPage, currentPage, setPostPerPage}
 } 
