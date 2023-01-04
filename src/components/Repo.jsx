@@ -5,45 +5,15 @@ import { AiOutlineBlock, AiOutlineLink, AiOutlineStar, AiOutlineTwitter, AiOutli
 import Loading from './Loading';
 import Pagination from './Pagination';
 import Footer from './Footer';
+import { useFetch } from '../hooks/useFetch';
+import { useFetchRepo } from '../hooks/useFetchRepo';
 
 const Repo = () => {
-    const [loading, setLoading] = useState(true)
-    const [data, setData] = useState([])
-
-    const [repo, setRepo] = useState([])
+    const {data, loading} = useFetch()
+    const  {repo} = useFetchRepo()
+    
     const [currentPage, setCurrentPage] = useState(1)
     const [postPerPage, setPostPerPage] = useState(5)
-
-
-    const fetchData = async () => {
-
-
-        setLoading(true)
-
-        // waiting for response from Api Call
-        const res = await fetch('https://api.github.com/users/accoladesio');
-        const result = await res.json();
-        console.log(result);
-
-        // disable loading state once data is fetched
-        setLoading(false)
-        setData(result)
-
-
-        const url_repo = 'https://api.github.com/users/accoladesio/repos'
-
-        const response = await fetch(url_repo);
-        const repo = await response.json();
-
-
-        setRepo(repo)
-        // disable loading state once data is fetched
-        // console.log(repo)
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
 
 
     const lastPostIndex = currentPage * postPerPage;
@@ -103,7 +73,7 @@ if (loading){
                             <div className='repo-list' key={list.id}>
                                 
                                 <span>
-                                <Link to={`/repo/${list.name}`} state={{list: list}}>
+                                <Link to={`/repo/${list.name + list.id}/`} state={{list: list}}>
                                     <h2>{list.name}</h2>
                                 </Link>
                                     <p className='flex'>{list.language}</p>
