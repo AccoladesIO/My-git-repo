@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
 import { NavLink as Link, Outlet } from "react-router-dom";
 import { AiOutlineBlock, AiOutlineLink, AiOutlineStar, AiOutlineTwitter, AiOutlineGithub } from 'react-icons/ai'
 import Loading from './Loading';
@@ -7,19 +6,13 @@ import Pagination from './Pagination';
 import Footer from './Footer';
 import { useFetch } from '../hooks/useFetch';
 import { useFetchRepo } from '../hooks/useFetchRepo';
+import { usePaginate } from '../hooks/usePaginate';
 
 const Repo = () => {
     const {data, loading} = useFetch()
     const  {repo} = useFetchRepo()
-    
-    const [currentPage, setCurrentPage] = useState(1)
-    const [postPerPage, setPostPerPage] = useState(5)
-
-
-    const lastPostIndex = currentPage * postPerPage;
-    const firstPostIndex = lastPostIndex - postPerPage
-    const currentRepo = repo.slice(firstPostIndex, lastPostIndex)
-
+    const  {setCurrentPage, currentRepo, postPerPage, currentPage, setPostPerPage} = usePaginate()
+   
 
 
 if (loading){

@@ -1,21 +1,14 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
 import '../App.css'
 import Pagination from './Pagination'
 import { useFetchRepo } from '../hooks/useFetchRepo'
+import { usePaginate } from '../hooks/usePaginate'
 
 const RepoList = () => {
-  const repo = useFetchRepo()
-
-    const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(5)
- 
-
-  const lastPostIndex = currentPage * postPerPage;
-  const firstPostIndex = lastPostIndex - postPerPage
-  const currentRepo = repo.slice(firstPostIndex, lastPostIndex)
-
+  const {repo} = useFetchRepo()
+  const {setCurrentPage, currentRepo, postPerPage, currentPage, setPostPerPage } = usePaginate()
+  
   return (
     <article className='info repo'>
         <h3 className='title'>Repositories</h3>
